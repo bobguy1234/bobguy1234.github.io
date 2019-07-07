@@ -5,8 +5,6 @@
 <link rel="stylesheet" href="vendor/bootstrap.min.css">
 <script src="AgoraRTCSDK-2.7.1.js"></script>
 <script src="vendor/jquery.js"></script>
-<link rel="stylesheet" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -29,13 +27,12 @@ Host: <input id="video" type="checkbox" checked></input>
 <button id="publish" class="btn btn-primary" onclick="publish()">Publish</button>
 <button id="unpublish" class="btn btn-primary" onclick="unpublish()">Unpublish</button>
 <img src="finallogo.jpeg" class="cover" width="272.9" height="80" style="margin-left: 240px"> 
-
 </div>
 </div>
 
     <!--style>
     .video__box{width:910px; margin:0 auto; overflow:hidden;}
-    .video__main{ width:810px; height:607px;float:left}
+    .video__main{ width:810px; height:607px;float:left }
     .video__list{ width:200px; height:607px; float:left;}
     .video__item{ width:200px; height:174px; hei background:url(/img/icon_live.png) center center no-repeat; }
     </style>
@@ -49,35 +46,10 @@ Host: <input id="video" type="checkbox" checked></input>
     </div-->
 
 <div id="video" style="margin:0 auto;">
-  
-<!-- <div id="agora_local" style="float:right;margin: 0 0 0 15px;width:600px;height:307px;display:inline-block;"></div>
-
-<div id="body2" class="panel panel-default" style="float:right; margin: 0 0 0 15px">
-  <img src="oraclearena.jpg"  class="cover" width="300" height="300"  \img>
-</div> -->
-
-<div class="container">
-  <div class = "row">
-    <div class="col-6"></div>
-    <div class="col-6">
-      <div id="agora_local" style="float:right;margin: 0 0 0 15px;width:600px;height:307px;display:inline-block;background-color: gray"></div>
-    </div>
-  </div>
-  <div class="row">
-    <div class ="col-6"></div>
-    <div class="col-6">
-        <div id="body2" class="panel panel-default" style="float:right; margin: 0 0 0 15px">
-            <img src="chat2.jpeg"  class="cover" width="546" height="300"  \img>
-        </div>
-    </div>
-  </div>
-
-  
-
+    <div id="agora_local" style="float:right;width:600px;height:307px;display:inline-block;"></div>
 </div>
 
-
-<script language="javascript">ß
+<script language="javascript">
 
 if(!AgoraRTC.checkSystemRequirements()) {
   alert("Your browser does not support WebRTC!");
@@ -110,8 +82,7 @@ function join() {
   client = AgoraRTC.createClient({mode: 'live'});
   client.init(appId.value, function () {
     console.log("AgoraRTC client initialized");
-    client.join("006b356a2da2ec74bed87bf9cdbb584b26bIABOkgZkDLuueH41QgvurvvhtB3qbjemIbmBmg0AS8ENvLe8CPUAAAAAEACZlmWrSWEjXQEAAQBIYSNd", 
-    "myChannel2", null, function(uid) {
+    client.join("006b356a2da2ec74bed87bf9cdbb584b26bIABOkgZkDLuueH41QgvurvvhtB3qbjemIbmBmg0AS8ENvLe8CPUAAAAAEACZlmWrSWEjXQEAAQBIYSNd", channel.value, null, function(uid) {
       console.log("User " + uid + " join channel successfully");
 
       if (document.getElementById("video").checked) {
